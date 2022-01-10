@@ -19,3 +19,5 @@ export const tail = <XS>(xs: XS) => {
 };
 
 export const append = <X, XS>(x: X, xs: XS) => (isString(xs) ? `${x}${xs}` : null);
+
+export const code = <X>(x: X) => (typeof x === "string" ? x.charCodeAt(0) : 0);

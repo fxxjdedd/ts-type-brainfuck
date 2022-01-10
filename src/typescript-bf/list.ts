@@ -17,4 +17,4 @@ export const tail = <XS>(xs: XS) => {
   return null;
 };
 
-export const cons = <X, XS>(x: X, xs: XS) => (isList(xs) ? [x, ...xs] : null);
+export const append = <X, XS>(x: X, xs: XS) => (isList(xs) ? [x, ...xs] : null);
