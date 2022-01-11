@@ -1,4 +1,4 @@
-import { append, head, isEmptyList, tail } from "./list";
+import { prepend, head, isEmptyList, tail } from "./list";
 
 export const memory = <L, H, R>(left: L, head: H, right: R) => ({
   left,
@@ -16,15 +16,15 @@ export const write = <M, C>(m: M, c: C) => (isMemory(m) ? memory(m.left, c, m.ri
 export const moveL = <M>(m: M) =>
   isMemory(m)
     ? isEmptyList(m.left)
-      ? memory([], 0, append(m.head, m.right))
-      : memory(tail(m.left), head(m.left), append(m.head, m.right))
+      ? memory([], 0, prepend(m.head, m.right))
+      : memory(tail(m.left), head(m.left), prepend(m.head, m.right)) // 违反直觉，是为了后续使用type的template literal来模拟，它只支持infer first和infer tail。
     : null;
 
 export const moveR = <M>(m: M) =>
   isMemory(m)
     ? isEmptyList(m.right)
-      ? memory(append(m.head, m.left), 0, [])
-      : memory(append(m.head, m.left), head(m.right), tail(m.right))
+      ? memory(prepend(m.head, m.left), 0, [])
+      : memory(prepend(m.head, m.left), head(m.right), tail(m.right)) // 违反直觉，是为了后续使用type的template literal来模拟，它只支持infer first和infer tail。
     : null;
 
 export const incr = <T>(head: T) => Number(head) + 1;

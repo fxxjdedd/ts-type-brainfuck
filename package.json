@@ -1,0 +1,23 @@
+{
+  "name": "ts-type-brainfuck",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".prettierrc.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxxjdedd/ts-type-brainfuck.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fxxjdedd/ts-type-brainfuck/issues"
+  },
+  "homepage": "https://github.com/fxxjdedd/ts-type-brainfuck#readme",
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
